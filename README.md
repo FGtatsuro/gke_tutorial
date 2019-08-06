@@ -10,6 +10,12 @@ Trial for GKE tutorial
 - kubectl (>= 1.14.x)
 - kustomize
 
+We can check tool requirements as follows.
+
+```
+$ make doctor
+```
+
 ### GCP
 
 - Accounts who has permissions following roles give:
