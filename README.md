@@ -27,3 +27,7 @@ $ make doctor
    - deploymentmanager.googleapis.com
    - compute.googleapis.com
    - container.googleapis.com
+- Your activated configuration must have default setting values:
+   - project
+   - compute/region
+   - compute/zone
