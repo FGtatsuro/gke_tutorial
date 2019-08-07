@@ -31,3 +31,14 @@ $ make doctor
    - project
    - compute/region
    - compute/zone
+
+```bash
+# Check whether your account has proper roles
+$ gcloud projects get-iam-policy <project_id>
+
+# Check whether required services are enabled
+$ gcloud services list --enabled
+
+# Check whether default settings values are set
+$ gcloud config configurations list
+```
