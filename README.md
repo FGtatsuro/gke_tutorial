@@ -22,7 +22,7 @@ $ make doctor
    - roles/container.admin
    - roles/deploymentmanager.editor
    - roles/iam.serviceAccountUser
-- Enabled API
+- Enabled API on your project:
    - iam.googleapis.com
    - deploymentmanager.googleapis.com
    - compute.googleapis.com
