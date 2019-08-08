@@ -1,0 +1,8 @@
+info:
+  title: Quickstart
+  author: Tatsuro Fujii
+  description: Create resources for Quickstart(https://cloud.google.com/kubernetes-engine/docs/quickstart)
+  version: 1.0
+
+imports:
+- path: cluster.jinja

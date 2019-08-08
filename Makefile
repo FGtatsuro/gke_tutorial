@@ -21,3 +21,19 @@ doctor:
 	fi
 	@printf "\33[32m%s\33[0m\n" "kustomize: OK"
 	@printf "\33[32m%s\33[0m\n" "ALL OK! Let's start! 🌟"
+
+
+.PHONY: quickstart/cluster/create quickstart/cluster/destroy
+.PHONY: quickstart/app/create quickstart/app/destroy
+
+quickstart/cluster/create:
+	make -C quickstart cluster/create
+
+quickstart/cluster/destroy:
+	make -C quickstart cluster/destroy
+
+quickstart/app/create:
+	make -C quickstart app/create
+
+quickstart/app/destroy:
+	make -C quickstart app/destroy
