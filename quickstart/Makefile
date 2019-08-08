@@ -1,4 +1,4 @@
-.PHONY: cluster/create cluster/destroy
+.PHONY: cluster/create cluster/destroy cluster/config
 
 cluster/create:
 	if [ -z "`gcloud container clusters list | grep quickstart`" ]; then \
@@ -10,11 +10,14 @@ cluster/destroy:
 		gcloud deployment-manager deployments delete quickstart; \
 	fi
 
+cluster/config:
+	gcloud container clusters get-credentials quickstart
+
 
 .PHONY: app/create app/destroy
 
-app/create:
+app/create: cluster/config
 	kubectl apply -k app
 
-app/destroy:
+app/destroy: cluster/config
 	kubectl delete -k app
