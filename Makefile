@@ -24,9 +24,16 @@ doctor:
 
 
 .PHONY: quickstart/cluster/create quickstart/cluster/destroy
+.PHONY: quickstart/app/create quickstart/app/destroy
 
 quickstart/cluster/create:
 	make -C quickstart cluster/create
 
 quickstart/cluster/destroy:
 	make -C quickstart cluster/destroy
+
+quickstart/app/create:
+	make -C quickstart app/create
+
+quickstart/app/destroy:
+	make -C quickstart app/destroy
