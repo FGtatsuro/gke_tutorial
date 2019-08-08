@@ -50,7 +50,9 @@ $ gcloud config configurations list
 ```bash
 $ make quickstart/cluster/create
 
-<Pod/Service creation TBD>
+$ make quickstart/app/create
+
+$ make quickstart/app/destroy
 
 $ make quickstart/cluster/destroy
 ```
