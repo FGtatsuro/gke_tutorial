@@ -5,6 +5,16 @@ cluster/create:
 		gcloud deployment-manager deployments create quickstart --template cluster/main.jinja --automatic-rollback-on-error; \
 	fi
 
+cluster/preview:
+	if [ -n "`gcloud container clusters list | grep quickstart`" ]; then \
+		gcloud deployment-manager deployments update quickstart --template cluster/main.jinja --preview; \
+	fi
+
+cluster/update:
+	if [ -n "`gcloud container clusters list | grep quickstart`" ]; then \
+		gcloud deployment-manager deployments update quickstart; \
+	fi
+
 cluster/destroy:
 	if [ -n "`gcloud container clusters list | grep quickstart`" ]; then \
 		gcloud deployment-manager deployments delete quickstart; \

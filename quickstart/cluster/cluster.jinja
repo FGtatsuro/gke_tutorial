@@ -16,6 +16,10 @@ resources:
             diskSizeGb: 10
             machineType: {{ properties["machineType"] }}
             preemptible: true
+          autoscaling:
+            enabled: true
+            minNodeCount: 3
+            maxNodeCount: 10
         - name: {{ env["name"] }}-stable
           initialNodeCount: 1
           config:
