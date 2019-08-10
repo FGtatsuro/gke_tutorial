@@ -23,11 +23,17 @@ doctor:
 	@printf "\33[32m%s\33[0m\n" "ALL OK! Let's start! 🌟"
 
 
-.PHONY: quickstart/cluster/create quickstart/cluster/destroy
+.PHONY: quickstart/cluster/create quickstart/cluster/preview quickstart/cluster/update quickstart/cluster/destroy
 .PHONY: quickstart/app/create quickstart/app/destroy
 
 quickstart/cluster/create:
 	make -C quickstart cluster/create
+
+quickstart/cluster/preview:
+	make -C quickstart cluster/preview
+
+quickstart/cluster/update:
+	make -C quickstart cluster/update
 
 quickstart/cluster/destroy:
 	make -C quickstart cluster/destroy
