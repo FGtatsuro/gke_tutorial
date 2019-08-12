@@ -17,6 +17,11 @@ properties:
     description: machine type of cluster nodes
     default: f1-micro
 
+  machineTypePreemptible:
+    type: string
+    description: machine type of cluster nodes (Preemptible VM)
+    default: g1-small
+
   clusterVersion:
     type: string
     description: k8s version of this cluster
