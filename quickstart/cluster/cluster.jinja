@@ -7,6 +7,7 @@ resources:
     zone: {{ properties["zone"] }}
     cluster:
       name: {{ env["name"] }}
+      initialClusterVersion: "{{ properties['clusterVersion'] }}"
       locations:
       - {{ properties["zone"] }}
       nodePools:
@@ -20,8 +21,12 @@ resources:
             enabled: true
             minNodeCount: 3
             maxNodeCount: 10
+          management:
+            autoUpgrade: true
         - name: {{ env["name"] }}-stable
           initialNodeCount: 1
           config:
             diskSizeGb: 10
             machineType: {{ properties["machineType"] }}
+          management:
+            autoUpgrade: true
