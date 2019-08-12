@@ -16,3 +16,8 @@ properties:
     type: string
     description: machine type of cluster nodes
     default: f1-micro
+
+  clusterVersion:
+    type: string
+    description: k8s version of this cluster
+    default: "1.13"
