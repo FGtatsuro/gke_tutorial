@@ -20,7 +20,7 @@ resources:
           autoscaling:
             enabled: true
             minNodeCount: 3
-            maxNodeCount: 10
+            maxNodeCount: 5
           management:
             autoUpgrade: true
         - name: {{ env["name"] }}-stable
