@@ -34,8 +34,5 @@ doctor:
 cluster:
 	@(make -C cluster `cat cluster/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
 
-quickstart/app/create:
-	make -C quickstart app/create
-
-quickstart/app/destroy:
-	make -C quickstart app/destroy
+stateless:
+	@(make -C quickstart/stateless `cat quickstart/stateless/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
