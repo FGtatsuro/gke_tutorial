@@ -20,6 +20,11 @@ doctor:
 		exit 1; \
 	fi
 	@printf "\33[32m%s\33[0m\n" "kustomize: OK"
+	@if [ -z "`which peco`" ]; then \
+		printf "\33[31m%s\33[0m\n" "peco doesn't exist on PATH. 👿"; \
+		exit 1; \
+	fi
+	@printf "\33[32m%s\33[0m\n" "peco: OK"
 	@printf "\33[32m%s\33[0m\n" "ALL OK! Let's start! 🌟"
 
 

@@ -9,6 +9,7 @@ Trial for GKE tutorial
 - gcloud
 - kubectl (>= 1.14.x)
 - kustomize
+- peco
 
 We can check tool requirements as follows.
 
