@@ -29,7 +29,7 @@ doctor:
 
 
 .PHONY: cluster
-.PHONY: quickstart/app/create quickstart/app/destroy
+.PHONY: stateless
 
 cluster:
 	@(make -C cluster `cat cluster/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
