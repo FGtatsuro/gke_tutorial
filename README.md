@@ -46,8 +46,6 @@ $ gcloud config configurations list
 
 ## Tutorial
 
-### [Quickstart](https://cloud.google.com/kubernetes-engine/docs/quickstart)
-
 ```bash
 $ make cluster # Select 'create' task via peco
 or
