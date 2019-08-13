@@ -32,7 +32,7 @@ doctor:
 .PHONY: quickstart/app/create quickstart/app/destroy
 
 cluster:
-	@(cd cluster; make `cat Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
+	@(make -C cluster `cat cluster/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
 
 quickstart/app/create:
 	make -C quickstart app/create
