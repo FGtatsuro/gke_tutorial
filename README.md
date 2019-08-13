@@ -48,11 +48,11 @@ $ gcloud config configurations list
 ### [Quickstart](https://cloud.google.com/kubernetes-engine/docs/quickstart)
 
 ```bash
-$ make quickstart/cluster/create
+$ make cluster/create
 
 $ make quickstart/app/create
 
 $ make quickstart/app/destroy
 
-$ make quickstart/cluster/destroy
+$ make cluster/destroy
 ```
