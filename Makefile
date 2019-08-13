@@ -28,20 +28,11 @@ doctor:
 	@printf "\33[32m%s\33[0m\n" "ALL OK! Let's start! 🌟"
 
 
-.PHONY: cluster/create cluster/preview cluster/update cluster/destroy
+.PHONY: cluster
 .PHONY: quickstart/app/create quickstart/app/destroy
 
-cluster/create:
-	make -C cluster create
-
-cluster/preview:
-	make -C cluster preview
-
-cluster/update:
-	make -C cluster update
-
-cluster/destroy:
-	make -C cluster destroy
+cluster:
+	@(cd cluster; make `cat Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
 
 quickstart/app/create:
 	make -C quickstart app/create

@@ -49,11 +49,21 @@ $ gcloud config configurations list
 ### [Quickstart](https://cloud.google.com/kubernetes-engine/docs/quickstart)
 
 ```bash
-$ make cluster/create
+$ make cluster # Select 'create' task via peco
+or
+$ (cd cluster; make create)
+
+$ make cluster # Select 'config' task via peco
+or
+$ (cd cluster; make config)
+
 
 $ make quickstart/app/create
 
 $ make quickstart/app/destroy
 
-$ make cluster/destroy
+
+$ make cluster # Select 'destroy' task via peco
+or
+$ (cd cluster; make destroy)
 ```
