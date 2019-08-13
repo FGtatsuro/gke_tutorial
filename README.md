@@ -58,9 +58,13 @@ or
 $ (cd cluster; make config)
 
 
-$ make quickstart/app/create
+$ make stateless # Select 'create' task via peco
+or
+$ (cd quickstart/stateless; make create)
 
-$ make quickstart/app/destroy
+$ make stateless # Select 'destroy' task via peco
+or
+$ (cd quickstart/stateless; make destroy)
 
 
 $ make cluster # Select 'destroy' task via peco
