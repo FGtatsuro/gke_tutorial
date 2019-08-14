@@ -56,16 +56,16 @@ or
 $ (cd cluster; make config)
 
 
-$ make quickstart/stateless # Select 'create' task via peco
+$ make quickstart/stateless # Select 'apply' task via peco
 or
-$ (cd quickstart/stateless; make create)
+$ (cd quickstart/stateless; make apply)
 
 $ make quickstart/stateless # Select 'destroy' task via peco
 or
 $ (cd quickstart/stateless; make destroy)
 
 
-$ make quickstart/`ls -1 quickstart | peco` # Select an example you want to run and 'create'/'destroy' task via peco.
+$ make quickstart/`ls -1 quickstart | peco` # Select an example you want to run and 'apply'/'destroy' task via peco.
 
 
 $ make cluster # Select 'destroy' task via peco

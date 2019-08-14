@@ -1,6 +1,6 @@
-.PHONY: create destroy
+.PHONY: apply destroy
 
-create:
+apply:
 	kubectl apply -k .
 
 destroy:
