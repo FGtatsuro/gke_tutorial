@@ -29,7 +29,7 @@ doctor:
 
 
 .PHONY: cluster
-.PHONY: quickstart/stateless quickstart/job quickstart/cronjob
+.PHONY: quickstart/stateless quickstart/job quickstart/cronjob quickstart/volume
 
 cluster:
 	@(make -C cluster `cat cluster/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
@@ -42,3 +42,6 @@ quickstart/job:
 
 quickstart/cronjob:
 	@(make -C quickstart/cronjob `cat quickstart/cronjob/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
+
+quickstart/volume:
+	@(make -C quickstart/volume `cat quickstart/volume/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
