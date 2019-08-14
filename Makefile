@@ -29,10 +29,13 @@ doctor:
 
 
 .PHONY: cluster
-.PHONY: quickstart/stateless
+.PHONY: quickstart/stateless quickstart/job
 
 cluster:
 	@(make -C cluster `cat cluster/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
 
 quickstart/stateless:
 	@(make -C quickstart/stateless `cat quickstart/stateless/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
+
+quickstart/job:
+	@(make -C quickstart/job `cat quickstart/job/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
