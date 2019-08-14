@@ -56,11 +56,11 @@ or
 $ (cd cluster; make config)
 
 
-$ make stateless # Select 'create' task via peco
+$ make quickstart/stateless # Select 'create' task via peco
 or
 $ (cd quickstart/stateless; make create)
 
-$ make stateless # Select 'destroy' task via peco
+$ make quickstart/stateless # Select 'destroy' task via peco
 or
 $ (cd quickstart/stateless; make destroy)
 
