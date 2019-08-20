@@ -1,0 +1,3 @@
+resources:
+  - pvclaim.yaml
+  - hello.yaml
