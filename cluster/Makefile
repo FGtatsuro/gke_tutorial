@@ -2,7 +2,8 @@
 
 create:
 	if [ -z "`gcloud container clusters list | grep gke-tutorial`" ]; then \
-		gcloud deployment-manager deployments create gke-tutorial --template main.jinja --automatic-rollback-on-error; \
+		gcloud deployment-manager deployments create gke-tutorial --template main.jinja --automatic-rollback-on-error && \
+		gcloud container clusters get-credentials gke-tutorial; \
 	fi
 
 preview:
