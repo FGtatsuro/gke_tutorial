@@ -9,3 +9,16 @@ spec:
   resources:
     requests:
       storage: 10Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: existing-pd-pvc
+spec:
+  storageClassName: ""
+  volumeName: existing-pd-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10G

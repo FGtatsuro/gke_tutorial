@@ -34,9 +34,14 @@ spec:
         volumeMounts:
         - mountPath: /pvc
           name: pvc-volume
+        - mountPath: /pvc2
+          name: pvc-volume2
         ports:
         - containerPort: 8080
       volumes:
         - name: pvc-volume
           persistentVolumeClaim:
             claimName: my-readonly-pvc
+        - name: pvc-volume2
+          persistentVolumeClaim:
+            claimName: existing-pd-pvc
