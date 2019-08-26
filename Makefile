@@ -47,4 +47,4 @@ quickstart/volume:
 	@(make -C quickstart/volume `cat quickstart/volume/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
 
 quickstart/persistent_volume:
-	@(make -C quickstart/persistent_volume `cat quickstart/persistent_volume/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
+	@(make -C quickstart/persistent_volume `cat quickstart/persistent_volume/Makefile | grep -P '^[-_/0-9a-zA-Z]+:' | sed s/:.*$$//g | peco`)
