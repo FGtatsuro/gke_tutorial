@@ -29,13 +29,16 @@ doctor:
 
 
 .PHONY: cluster
-.PHONY: quickstart/loadbalancer quickstart/job quickstart/cronjob quickstart/volume quickstart/persistent_volume
+.PHONY: quickstart/loadbalancer quickstart/clusterip quickstart/job quickstart/cronjob quickstart/volume quickstart/persistent_volume
 
 cluster:
 	@(make -C cluster `cat cluster/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
 
 quickstart/loadbalancer:
 	@(make -C quickstart/loadbalancer `cat quickstart/loadbalancer/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
+
+quickstart/clusterip:
+	@(make -C quickstart/clusterip `cat quickstart/clusterip/Makefile | grep -P '^[-_/0-9a-zA-Z]+:' | sed s/:.*$$//g | peco`)
 
 quickstart/job:
 	@(make -C quickstart/job `cat quickstart/job/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
