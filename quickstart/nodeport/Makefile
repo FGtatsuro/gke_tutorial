@@ -1,4 +1,4 @@
-.PHONY: apply destroy
+.PHONY: apply destroy verify
 
 apply:
 	kubectl apply -k .
