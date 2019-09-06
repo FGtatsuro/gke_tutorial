@@ -25,4 +25,4 @@ properties:
   clusterVersion:
     type: string
     description: k8s version of this cluster
-    default: "1.13"
+    default: "1.14"
