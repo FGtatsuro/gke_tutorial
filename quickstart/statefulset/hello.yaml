@@ -42,6 +42,17 @@ spec:
           ports:
             - name: web
               containerPort: 80
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              # OR
+              - matchExpressions:
+                # AND
+                - key: beta.kubernetes.io/instance-type
+                  operator: NotIn
+                  values:
+                    - f1-micro
   volumeClaimTemplates:
     - metadata:
         name: www
