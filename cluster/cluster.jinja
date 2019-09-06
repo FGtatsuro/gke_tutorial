@@ -23,6 +23,7 @@ resources:
             maxNodeCount: 5
           management:
             autoUpgrade: true
+            autoRepair: true
         - name: {{ env["name"] }}-stable
           initialNodeCount: 1
           config:
@@ -30,3 +31,4 @@ resources:
             machineType: {{ properties["machineType"] }}
           management:
             autoUpgrade: true
+            autoRepair: true
