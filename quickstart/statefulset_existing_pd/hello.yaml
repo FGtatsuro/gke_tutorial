@@ -1,0 +1,73 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  labels:
+    app: statefulset-existingpd-demo
+spec:
+  clusterIP: None
+  selector:
+    app: statefulset-existingpd-demo
+  ports:
+    - name: web
+      protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+  labels:
+    app: statefulset-existingpd-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: statefulset-existingpd-demo
+  serviceName: web
+  template:
+    metadata:
+      labels:
+        app: statefulset-existingpd-demo
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+        - name: statefulset-existingpd-demo
+          image: gcr.io/google_containers/nginx-slim:0.8
+          volumeMounts:
+            - name: www
+              mountPath: /usr/share/nginx/html
+          ports:
+            - name: web
+              containerPort: 80
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              # OR
+              - matchExpressions:
+                # AND
+                - key: beta.kubernetes.io/instance-type
+                  operator: NotIn
+                  values:
+                    - f1-micro
+  volumeClaimTemplates:
+    - metadata:
+        name: www
+        labels:
+          app: statefulset-existingpd-demo
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: ""
+        selector:
+          matchExpressions:
+            - key: app
+              operator: In
+              values:
+                - statefulset-existingpd-demo
+        resources:
+          requests:
+            storage: 1Gi

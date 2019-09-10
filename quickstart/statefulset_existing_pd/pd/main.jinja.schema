@@ -1,0 +1,7 @@
+info:
+  title: preexisting-pd scenario
+  author: Tatsuro Fujii
+  description: Create a quickstart scenario with pre-existing PD(persistent disk)
+
+imports:
+- path: disk.jinja
