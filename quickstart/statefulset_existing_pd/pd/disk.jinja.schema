@@ -1,0 +1,10 @@
+info:
+  title: persistent disk
+  author: Tatsuro Fujii
+  description: Create a persistent disk
+
+properties:
+  zone:
+    type: string
+    description: zone for persistent disk
+    default: us-west1-a

@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: statefulset-existingpd-pv-1
+  labels:
+    app: statefulset-existingpd-demo
+spec:
+  storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: statefulset-existing-pd-1
+    fsType: ext4
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: statefulset-existingpd-pv-2
+  labels:
+    app: statefulset-existingpd-demo
+spec:
+  storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: statefulset-existing-pd-2
+    fsType: ext4
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: statefulset-existingpd-pv-3
+  labels:
+    app: statefulset-existingpd-demo
+spec:
+  storageClassName: ""
+  persistentVolumeReclaimPolicy: Retain
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: statefulset-existing-pd-3
+    fsType: ext4

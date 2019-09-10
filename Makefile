@@ -29,7 +29,7 @@ doctor:
 
 
 .PHONY: cluster
-.PHONY: quickstart/loadbalancer quickstart/clusterip quickstart/nodeport quickstart/job quickstart/cronjob quickstart/volume quickstart/persistent_volume quickstart/namespace
+.PHONY: quickstart/loadbalancer quickstart/clusterip quickstart/nodeport quickstart/job quickstart/cronjob quickstart/volume quickstart/persistent_volume quickstart/namespace quickstart/statefulset quickstart/statefulset_existing_pd
 
 cluster:
 	@(make -C cluster `cat cluster/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
@@ -57,3 +57,9 @@ quickstart/persistent_volume:
 
 quickstart/namespace:
 	@(make -C quickstart/namespace `cat quickstart/namespace/Makefile | grep -P '^[-_/0-9a-zA-Z]+:' | sed s/:.*$$//g | peco`)
+
+quickstart/statefulset:
+	@(make -C quickstart/statefulset `cat quickstart/statefulset/Makefile | grep -P '^[-_/0-9a-zA-Z]+:' | sed s/:.*$$//g | peco`)
+
+quickstart/statefulset_existing_pd:
+	@(make -C quickstart/statefulset_existing_pd `cat quickstart/statefulset_existing_pd/Makefile | grep -P '^[-_/0-9a-zA-Z]+:' | sed s/:.*$$//g | peco`)
