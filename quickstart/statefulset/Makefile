@@ -5,4 +5,4 @@ apply:
 
 destroy:
 	kubectl delete -k .
-	kubectl delete pvc --all
+	kubectl delete pvc -l app=statefulset-demo
