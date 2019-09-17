@@ -1,0 +1,9 @@
+---
+configMapGenerator:
+- name: fromfilegenerate
+  files:
+    - fromfile.properties
+- name: fromliteralgenerate
+  literals:	
+    - FROM_LITERAL=test2
+
