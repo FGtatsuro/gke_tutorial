@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemonset-demo-fluentd
+spec:
+  selector:
+    matchLabels:
+      name: daemonset-demo-fluentd # Label selector that determines which Pods belong to the DaemonSet
+  template:
+    metadata:
+      labels:
+        name: daemonset-demo-fluentd # Pod template's label selector
+    spec:
+      containers:
+        - name: daemonset-demo-fluentd
+          image: gcr.io/google-containers/fluentd-elasticsearch:1.20
+          resources:
+            limits:
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              # OR
+              - matchExpressions:
+                # AND
+                - key: beta.kubernetes.io/instance-type
+                  operator: NotIn
+                  values:
+                    - f1-micro
