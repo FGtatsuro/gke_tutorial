@@ -29,7 +29,7 @@ doctor:
 
 
 .PHONY: cluster
-.PHONY: quickstart/loadbalancer quickstart/clusterip quickstart/nodeport quickstart/job quickstart/cronjob quickstart/volume quickstart/persistent_volume quickstart/namespace quickstart/statefulset quickstart/statefulset_existing_pd quickstart/daemonset
+.PHONY: quickstart/loadbalancer quickstart/clusterip quickstart/nodeport quickstart/job quickstart/cronjob quickstart/volume quickstart/persistent_volume quickstart/namespace quickstart/statefulset quickstart/statefulset_existing_pd quickstart/daemonset quickstart/configmap
 
 cluster:
 	@(make -C cluster `cat cluster/Makefile | grep -P '^[-_0-9a-zA-Z]+:' | sed s/://g | peco`)
@@ -66,3 +66,6 @@ quickstart/statefulset_existing_pd:
 
 quickstart/daemonset:
 	@(make -C quickstart/daemonset `cat quickstart/daemonset/Makefile | grep -P '^[-_/0-9a-zA-Z]+:' | sed s/:.*$$//g | peco`)
+
+quickstart/configmap:
+	@(make -C quickstart/configmap `cat quickstart/configmap/Makefile | grep -P '^[-_/0-9a-zA-Z]+:' | sed s/:.*$$//g | peco`)
