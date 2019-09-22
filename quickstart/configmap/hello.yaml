@@ -1,0 +1,38 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-demo
+spec:
+  containers:
+    - name: test-container1
+      image: k8s.gcr.io/busybox
+      command: [ "/bin/sh", "-c", "ls /etc/config" ]
+      volumeMounts:
+        - name: config
+          mountPath: /etc/config
+    - name: test-container2
+      image: k8s.gcr.io/busybox
+      command: [ "/bin/sh", "-c", "env" ]
+      env:
+        - name: FROM_LITERAL
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: fromliteral
+  volumes:
+    - name: config
+      configMap:
+        name: config
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          # OR
+          - matchExpressions:
+            # AND
+            - key: beta.kubernetes.io/instance-type
+              operator: NotIn
+              values:
+                - f1-micro
+  restartPolicy: Never
