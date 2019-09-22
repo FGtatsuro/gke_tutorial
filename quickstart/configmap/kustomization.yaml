@@ -1,9 +1,10 @@
 ---
+#  FYI: https://github.com/kubernetes-sigs/kustomize/blob/master/examples/secretGeneratorPlugin.md
 configMapGenerator:
-- name: fromfilegenerate
-  files:
-    - fromfile.properties
-- name: fromliteralgenerate
-  literals:	
-    - FROM_LITERAL=test2
-
+  - name: config
+    files:
+      - fromfile.properties
+    literals:
+      - fromliteral=test2
+resources:
+  - hello.yaml
