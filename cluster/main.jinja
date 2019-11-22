@@ -3,5 +3,6 @@ resources:
   type: cluster.jinja
   properties:
     zone: us-west1-a
-    machineType: f1-micro
-    machineTypePreemptible: g1-small
+    nodeConfig:
+      machineType: g1-small
+      preemptible: true
