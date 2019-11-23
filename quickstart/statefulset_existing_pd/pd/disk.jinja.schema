@@ -7,4 +7,4 @@ properties:
   zone:
     type: string
     description: zone for persistent disk
-    default: us-central1-a
+    default: us-east1-a
