@@ -6,16 +6,12 @@ info:
 
 required:
   - zone
+  - nodeConfig
 
 properties:
   zone:
     type: string
     description: zone cluster runs
-
-  machineType:
-    type: string
-    description: machine type of cluster nodes
-    default: f1-micro
 
   nodeConfig:
     type: object
@@ -27,6 +23,9 @@ properties:
       preemptible:
         type: boolean
         description: whether machine of cluster nodes is preemptible.
+    required:
+      - machineType
+      - preemptible
 
   clusterVersion:
     type: string
