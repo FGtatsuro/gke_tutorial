@@ -9,7 +9,16 @@ resources:
       name: {{ env["name"] }}
       initialClusterVersion: "{{ properties['clusterVersion'] }}"
       locations:
-      - {{ properties["zone"] }}
+        - {{ properties["zone"] }}
+      addonsConfig:
+        cloudRunConfig:
+          disabled: false
+        horizontalPodAutoscaling:
+          disabled: false
+        httpLoadBalancing:
+          disabled: false
+        istioConfig:
+          disabled: false
       nodePools:
         - name: {{ env["name"] }}-preemptible
           initialNodeCount: 3
